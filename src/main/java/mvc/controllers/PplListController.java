@@ -31,7 +31,7 @@ public class PplListController implements Initializable {
 
     @FXML
     void addPerson(ActionEvent event) {
-        //logger.info("addPerson Clicked");
+
         MainController.getInstance().switchView(ScreenType.PPLDETAIL,new People(-1,"","", LocalDate.now(),0));
     }
 
