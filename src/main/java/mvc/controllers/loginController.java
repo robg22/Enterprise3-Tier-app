@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import mvc.exception.UnauthorizedException;
+import mvc.gateway.LoginGateway;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,11 +27,22 @@ public class loginController implements Initializable {
         String userN = userName.getText();
         String pass = password.getText();
         if(userN != "" && pass != "") {
-            logger.info(userN + " LOGGED IN");
-            MainController.getInstance().switchView(ScreenType.PPLLIST);
-        }
 
+        }
+        //check login with LoginGateway
+        //login will throw an exception if it fails
+        try {
+            String sessionId = LoginGateway.login(userN, pass);
+        }catch(UnauthorizedException e){
+            //TODO: Display alert to screen
+            logger.info("Username or password incorrect");
+            return;
+        }
+        //if ok transition to cat list
+        logger.info(userN + " LOGGED IN");
+        MainController.getInstance().switchView(ScreenType.PPLLIST);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
