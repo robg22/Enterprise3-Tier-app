@@ -49,7 +49,7 @@ public class MainController implements Initializable{
                     rootNode = loader.load(); //Reference to top level node
                     rootPane.setCenter(rootNode);
                 } catch (IOException e) {
-                      e.printStackTrace();
+                    e.printStackTrace();
                 }
                 break;
 
