@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class AppMain extends Application {
     private static final Logger logger = LogManager.getLogger();
-    private ArrayList<People> people;
+
     public static void main(String[] args) {
         logger.info("Before launch");
         launch(args);
@@ -26,10 +26,7 @@ public class AppMain extends Application {
     public void init() throws Exception {
         //logger.info("In init");
         super.init();
-        people = new ArrayList<>();
-        people.add(new People(0,"Rob","Gonz", LocalDate.now(),22));
-        people.add(new People(0,"Doc","Rob", LocalDate.now(),21));
-        people.add(new People(0,"Kiwi","Gonz", LocalDate.now(),1));
+
 
 
     }
@@ -47,12 +44,12 @@ public class AppMain extends Application {
         FXMLLoader load = new FXMLLoader((this.getClass().getResource("/main_view.fxml")));
 
         load.setController(MainController.getInstance());
-        MainController.getInstance().setPeople(people);
+
 
         Parent rootNode = load.load();
         stage.setScene(new Scene(rootNode));
 
-        stage.setTitle("MVC Demo Cat App");
+        stage.setTitle("MVC Demo People App");
         stage.show();
 
        // logger.info("after start");

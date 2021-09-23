@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/people",
+    "headers" : {
+      "Authorization" : {
+        "contains" : "i am a session token"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "[{\"id\":1,\"firstName\":\"Spot\"},{\"id\":2,\"firstName\":\"FIDO\"},{\"id\":3,\"firstName\":\"El Grande\"}]",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

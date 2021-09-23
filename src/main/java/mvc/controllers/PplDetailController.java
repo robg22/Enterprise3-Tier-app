@@ -66,7 +66,7 @@ public class PplDetailController implements Initializable {
             if (person.getId() != 0) {
                 person.setId(0);
                 person.setDateOfBirth(LocalDate.now());
-                MainController.getInstance().getPeople().add(person);
+
                 logger.info("CREATING " + person.toString());
             } else {
                 logger.info("UPDATING " + person.toString());

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/login",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"username\":\"kiwi\",\"password\":\"1a5afeda973d776e31d1d7266f184468f84d99bed311d88d3dcb67015934f9f9\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"session_id\":\"i am a session token\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

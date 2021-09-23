@@ -44,13 +44,14 @@ public class PplListController implements Initializable {
             }
         else {
             logger.info("DELETING " + tempPpl.toString());
-            MainController.getInstance().getPeople().remove(tempPpl);
+
             MainController.getInstance().switchView(ScreenType.PPLLIST);
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.info(MainController.getInstance().getSession());//Session id should be set
         //logger.info("In PplListController Initialize");
         //1. Turn plain ol arrayList of models into an ObservableArrayList
         //2. Plug the observable array into the list
